@@ -3,11 +3,65 @@
 <head>
   <meta charset="utf-8">
   <title>Untitled</title>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+
+	<div id="product-container">
+		
+	</div>
+
+	<ul id="wishlist-container">
+	  <h3>My Wishlist</h3>
+		<!-- <button>Remove Item</button> -->
+	</ul>
+	<!-- <button>Add Item to Wish List!</button> -->
+
+	<script id="entry-template" type="text/x-handlebars-template">
+	 <div class="product">
+	  <h2 class='title'>
+	  {{title}}
+	  </h2>
+	  
+	  <img src={{image}}>
+	  
+	  <div class="details">Price: ${{cost}}</div>
+
+	  <div class="details">{{details.players}}</div>
+	  <div class="details">{{details.levels}}</div>
+	  <div class="details">{{details.characters}}</div>
+	  <div class="details">{{details.enemies}}</div>
+	  <div class="details">{{details.description}}</div>
+	  <button class="add">Add Item to Wish List!</button>
+	  </div>
+	</script>
+
+<script id="wishlist-template" type="text/x-handlebars-template">
 	
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="main.js"></script>
+	  <div class="product">
+	  {{title}}
+	  <button class="remove">Remove Item!</button>
+	  </div>
+	  
+	</script>
+
+
+
+
+
+
+
+	<!-- Use jQuery -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+	<!-- Handlebars JS from CDN -->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+
+	<!-- Our script -->
+	<script src="main.js"></script>
+	<!-- // <script src="main.css"></script> -->
+
 
 </body>
 </html>
