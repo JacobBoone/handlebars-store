@@ -11,11 +11,18 @@
 	<div id="product-container">
 		
 	</div>
-
+	<div class="wishlist">
+	<h3>My Wishlist</h3>
 	<ul id="wishlist-container">
-	  <h3>My Wishlist</h3>
+	  
+	  <!-- <p class='title'></p> -->
+
+		<!-- <p class="title"></p> -->
 		<!-- <button>Remove Item</button> -->
 	</ul>
+
+	</div>
+
 	<!-- <button>Add Item to Wish List!</button> -->
 
 	<script id="entry-template" type="text/x-handlebars-template">
@@ -28,22 +35,20 @@
 	  
 	  <div class="details">Price: ${{cost}}</div>
 
-	  <div class="details">{{details.players}}</div>
-	  <div class="details">{{details.levels}}</div>
-	  <div class="details">{{details.characters}}</div>
-	  <div class="details">{{details.enemies}}</div>
-	  <div class="details">{{details.description}}</div>
+	  <p class="details">{{details.players}}</p>
+	  <p class="details">{{details.levels}}</p>
+	  <p class="details">{{details.characters}}</p>
+	  <p class="details">{{details.enemies}}</p>
+	  <p class="details">{{details.description}}</p>
 	  <button class="add">Add Item to Wish List!</button>
 	  </div>
 	</script>
 
-<script id="wishlist-template" type="text/x-handlebars-template">
-	
-	  <div class="product">
-	  {{title}}
-	  <button class="remove">Remove Item!</button>
-	  </div>
-	  
+	<script id="wishlist-template" type="text/x-handlebars-template">
+		<li>
+		  <div class="product">{{title}}</div>
+		  <button class="remove">Remove Item!</button>
+		</li>
 	</script>
 
 
@@ -57,7 +62,8 @@
 
 	<!-- Handlebars JS from CDN -->
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
-
+	<!-- underscore -->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
 	<!-- Our script -->
 	<script src="main.js"></script>
 	<!-- // <script src="main.css"></script> -->

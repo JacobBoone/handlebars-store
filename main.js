@@ -49,16 +49,37 @@ $(document).on('ready', function() {
 			// $('#product-container').append('<button class="add">Add Item to Wish List!</button>');
 
 		};
+		
+	var wishlistSource = $('#wishlist-template').html()
+	var wishtemplate = Handlebars.compile(wishlistSource);
+	var wishArray = []
 
+	var wishlistRender = function(){
+		$('#wishlist-container').empty();
 
+		for (var i = 0; i < wishArray.length; i++) {
+			$('#wishlist-container').append(wishtemplate({title: wishArray[i]}));
+		};
+}
 	$('.add').click(function(){
 		// console.log('add me');
 		var wishFor = $(this).closest('.product').find('.title').text();
-		console.log(wishFor)
-		$('#wishlist-container').append(wishFor);
+		wishArray.push(wishFor)
+		console.log(wishArray)
+		// $('#wishlist-container').append('<p class="title"></p>')
+		// $('#wishlist-container > .title').append(wishFor);
+			
+		wishlistRender()
 
-		// var wishlistSource = $('#wishlist-template').html()
-		// var wishtemplate = Handlebars.compile(wishlistSource);
+	
+
+			// if (wishtemplate.product = wishFor){
+
+				
+			// 	// $('#wishlist-container').append('<button class="remove">Remove Item!</button>');
+			// }
+		
+
 
 
 		// for (var i = 0; i < productsData.productsList.length; i++) {
@@ -66,13 +87,23 @@ $(document).on('ready', function() {
 		// 	// each item separately as a context
 		// 	// $('#wishlist-container').append('<h2>My Wishlist</h2>');
 		// 	$('#wishlist-container').append( wishtemplate( productsData.productsList[i] ) );
-		// 	// $('#wishlist-container').append('<button class="remove">Remove Item!</button>');
+		
 		// };
 
 		$('.remove').click(function(){
 		console.log('remove me')
-		$(this).closest('.product').remove()
+		// $(this).closest('ul').find('.title').remove()
+		var deleteTitle = $(this).siblings(".product").text()
+		console.log(deleteTitle)
+		wishArray = _.reject(wishArray,function(item){
+			return item === deleteTitle
+
+		})
+		wishlistRender()
+		// $(this).remove()
+		// $('#wishlist-container').append('<p class="title"></p>');
 		// $('#wishlist-container').()
+
 	})
 
 
